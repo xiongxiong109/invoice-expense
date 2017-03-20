@@ -11,9 +11,17 @@ invoice-expense
 6. 数据列表按时间顺序从低到高排列
 
 ### 技术模块 ###
-    1. framework: `backbone`
-    2. module : `require.js (AMD)`
-    3. router: backbone router
-    4. js: es5
-    5. css: postcss salad bem
-    6. 构建: gulp
+
+1. framework: `backbone`
+2. module : `require.js (AMD)`
+3. router: `backbone router`
+4. js: `es5`
+5. css: `postcss` `salad` `bem`
+6. 构建: `gulp`
+
+### run ###
+
+	npm install
+	gulp
+	# start another terminal
+	npm start
