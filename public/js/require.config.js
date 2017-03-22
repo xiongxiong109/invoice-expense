@@ -10,6 +10,7 @@ requirejs.config({
 		'jquery': 'js/lib/jquery/dist/jquery.min',
 		'backbone': 'js/lib/backbone/backbone-min',
 		// modules
+		'FormPanel': 'js/module/form.panel'
 	},
 	shim: {
 		'backbone': {
