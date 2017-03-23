@@ -1,6 +1,6 @@
 <div class="u-row">
 	<label>发票金额</label>
-	<input type="number" placeholder="请输入发票金额" value="<%=casePrice%>">
+	<input type="number" id="j_casePrice" placeholder="请输入发票金额" value="<%=casePrice%>">
 </div>
 <div class="u-row">
 	<div class="u-col4">
@@ -22,9 +22,13 @@
 </div>
 <div class="u-row">
 	<label>加班时间</label>
-	<input type="text" placeholder="19:00" readonly="readonly" class="is-disabled">
+	<input type="text" placeholder="<%=fromTime%>" readonly="readonly" class="is-disabled">
 	<label class="is-tc">至</label>
-	<input class="ipt" placeholder="请选择下班时间" readonly="readonly"/>
+	<select id="j_toTime" class="ipt">
+		<%_.each(toTime, function(v, k) {%>
+		<option value="<%=k%>"><%=v%></option>
+		<%})%>
+	</select>
 <!-- 	<div id="j_time_picker" class="dropDownList">
 		<ul class="list">
 			<li>12</li>
@@ -36,13 +40,13 @@
 </div>
 <div class="u-row">
 	<label>从</label>
-	<input type="text" placeholder="选择出发地">
+	<input type="text" placeholder="选择出发地" value="<%=fromAddr%>" id="j_fromAddr">
 	<label class="is-tc">到</label>
-	<input type="text" placeholder="选择到达地">
+	<input type="text" placeholder="选择到达地" value="<%=toAddr%>" id="j_toAddr">
 	<label class="is-tc">共</label>
-	<input type="text">
+	<input type="text" value="<%=distance%>" id="distance">
 	<label>公里</label>
 </div>
 <div class="u-row">
-	<button>生成报销文案</button>
+	<button id="j_result">生成报销文案</button>
 </div>
