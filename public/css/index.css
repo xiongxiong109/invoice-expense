@@ -1,13 +1,3 @@
-.home-title-container h2:after{
-
-    display: inline-block;
-
-    content: "";
-
-    height: 100%;
-
-    vertical-align: middle;
-}
 /**
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
@@ -606,6 +596,17 @@ h1, h2, h3, h4, h5, h6{
     transition: .3s ease
 }
 
+.home-title-container h2:after{
+
+    display: inline-block;
+
+    content: "";
+
+    height: 100%;
+
+    vertical-align: middle;
+}
+
 .home-title-container h2:hover{
 
     color: #ffe2b6;
@@ -627,12 +628,21 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
-.home-form input, .home-form label{
+.home-form input, .home-form label, .home-form .ipt{
 
     font-size: 14px;
 }
 
-.home-form input{
+.home-form .ipt{
+
+    display: inline-block;
+
+    width: 147px;
+
+    cursor: default;
+}
+
+.home-form input, .home-form .ipt{
 
     padding: 6px;
 
@@ -643,9 +653,22 @@ h1, h2, h3, h4, h5, h6{
     transition: .3s
 }
 
-.home-form input:focus{
+.home-form input:focus, .home-form .ipt:focus{
 
     border-color: #0000cd;
+}
+
+.home-form input.is-disabled, .home-form .ipt.is-disabled{
+
+    background-color: #ccc;
+
+    border-color: #ddd;
+
+    color: #333;
+
+    cursor: default;
+
+    pointer-events: none;
 }
 
 .home-form label{
@@ -678,11 +701,22 @@ h1, h2, h3, h4, h5, h6{
 
     border: none;
 
-    font-size: 16px;
+    font-size: 14px;
 
-    line-height: 1.5;
+    line-height: 2;
 
     border-radius: 4px;
+
+    outline: none;
+
+    transition: .2s
+}
+
+.home-form button:active{
+
+    -ms-transform: scale(.9);
+
+        transform: scale(.9);
 }
 
 .u-row{

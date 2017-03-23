@@ -34,16 +34,24 @@
 		@descedent panel {
 			background-color: #efefef;
 		}
-		input, label {
+		input, label, .ipt {
 			font-size: 14px;
 		}
-		input {
+		.ipt {
+			display: inline-block;
+			width: 147px;
+			cursor: default;
+		}
+		input, .ipt {
 			padding: 6px;
 			border: 1px solid #ccc;
 			border-radius: 4px;
 			transition: .3s;
 			&:focus {
 				border-color: #0000cd;
+			}
+			@when disabled {
+				@utils-disabled #ccc #ddd #333;
 			}
 		}
 		label {
@@ -61,8 +69,13 @@
 			-webkit-appearance: button;
 			appearance: button;
 			border: none;
-			font-size: 16px 1.5;
+			font-size: 14px 2;
 			border-radius: 4px;
+			outline: none;
+			transition: .2s;
+			&:active {
+				transform: scale(.9);
+			}
 		}
 	}
 }

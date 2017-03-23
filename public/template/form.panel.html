@@ -1,22 +1,38 @@
 <div class="u-row">
+	<label>发票金额</label>
+	<input type="number" placeholder="请输入发票金额" value="<%=casePrice%>">
+</div>
+<div class="u-row">
 	<div class="u-col4">
 		<label>加班标题</label>
-		<input type="text" placeholder="请输入标题">
+		<input type="text" placeholder="请输入标题" value="<%=title%>">
 	</div>
 	<div class="u-col4">
 		<label>加班内容</label>
-		<input type="text" placeholder="请输入内容">
+		<input type="text" placeholder="请输入内容" value="<%=content%>">
 	</div>
 	<div class="u-col4">
 		<label>交通方式</label>
-		<input type="text" placeholder="请选择交通方式">
+		<select name="by" class="ipt">
+			<%_.each(by, function(v, key){%>
+			<option value="<%=key%>"><%=v%></option>
+			<%})%>
+		</select>
 	</div>
 </div>
 <div class="u-row">
 	<label>加班时间</label>
-	<input type="text" placeholder="19:00">
+	<input type="text" placeholder="19:00" readonly="readonly" class="is-disabled">
 	<label class="is-tc">至</label>
-	<input type="text" placeholder="请选择交通方式">
+	<input class="ipt" placeholder="请选择下班时间" readonly="readonly"/>
+<!-- 	<div id="j_time_picker" class="dropDownList">
+		<ul class="list">
+			<li>12</li>
+			<li>12</li>
+			<li>12</li>
+			<li>12</li>
+		</ul>
+	</div> -->
 </div>
 <div class="u-row">
 	<label>从</label>
