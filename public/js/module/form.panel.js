@@ -33,6 +33,7 @@ define(['backbone', 'text!template/form.panel.html'],
 			model: new Model(),
 			events: {
 				'input #j_casePrice': 'evt_modifyPrice',
+				'input #distance': 'evt_modifyDistance',
 				'change #j_toTime': 'evt_modifyToTime',
 				'click #j_result': 'evt_callback'
 			},
@@ -61,6 +62,10 @@ define(['backbone', 'text!template/form.panel.html'],
 				var price = e.currentTarget.value;
 				this.model.set('casePrice', price);
 				this.calcPrice(price);
+			},
+			evt_modifyDistance: function(e) {
+				var distance = e.currentTarget.value;
+				this.model.set('distance', distance);
 			},
 			evt_modifyToTime: function(e) {
 				var v = e.currentTarget.value;
