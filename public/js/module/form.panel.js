@@ -7,7 +7,7 @@ define(['backbone', 'text!template/form.panel.html'],
 				title: '加班打车',
 				content: '项目发布',
 				fromAddr: '凌空SOHO',
-				toAddr: '乐都路九峰路',
+				toAddr: '沪亭路正好广场',
 				distance: '36.5',
 				by: {
 					'0': '出租'
@@ -35,6 +35,7 @@ define(['backbone', 'text!template/form.panel.html'],
 				'input #j_casePrice': 'evt_modifyPrice',
 				'input #distance': 'evt_modifyDistance',
 				'change #j_toTime': 'evt_modifyToTime',
+				'change #j_toAddr': 'evt_modifyAddr',
 				'click #j_result': 'evt_callback'
 			},
 			render: function() {
@@ -72,6 +73,11 @@ define(['backbone', 'text!template/form.panel.html'],
 				var price = this.model.get('casePrice');
 				this.model.set('selectToTime', v);
 				this.calcPrice(price);
+			},
+			evt_modifyAddr: function(e) {
+				var v = e.currentTarget.value;
+				// var addr = this.model.get('toAddr');
+				this.model.set('toAddr', v);
 			},
 			evt_callback: function() {
 				var json = this.model.toJSON();
